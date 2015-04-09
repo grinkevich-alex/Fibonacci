@@ -10,6 +10,7 @@
 
 #import "ScrollingTableView.h"
 #import "FibonacciValueGenerator.h"
+#import "BigNumber.h"
 
 static NSInteger const kRowsPerScreen = 4;
 static NSInteger const kLoadedScreens = 3;
@@ -49,10 +50,11 @@ static NSInteger const kLoadedScreens = 3;
 
 #pragma mark - ScrollingTableViewDelegate
 
-- (BigNumber *)valueForScrollingTableView:(ScrollingTableView *)scrollingTableView atIndex:(NSInteger)index {
+- (NSString *)valueForScrollingTableView:(ScrollingTableView *)scrollingTableView atIndex:(NSInteger)index {
     NSString *indexString = @(index).stringValue;
     BigNumber *indexBigNumber = [[BigNumber alloc] initWithStringRepresentation:indexString];
-    return [self.fibonacciValueGenerator fibonacciValueForIndex:indexBigNumber];
+    NSString *valueString = [self.fibonacciValueGenerator fibonacciValueForIndex:indexBigNumber].stringValue;
+    return valueString;
 }
 
 @end

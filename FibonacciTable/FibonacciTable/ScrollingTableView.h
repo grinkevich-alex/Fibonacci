@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BigNumber.h"
 
 @protocol ScrollingTableViewDelegate;
 
@@ -22,5 +21,5 @@
 
 @protocol ScrollingTableViewDelegate <NSObject>
 
-- (BigNumber *)valueForScrollingTableView:(ScrollingTableView *)scrollingTableView atIndex:(NSInteger)index;
+- (NSString *)valueForScrollingTableView:(ScrollingTableView *)scrollingTableView atIndex:(NSInteger)index;
 @end

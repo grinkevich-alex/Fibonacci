@@ -67,7 +67,7 @@
     NSInteger startIndex = (self.loadedScreens - 2)*self.pageIndex*self.rowsPerScreen;
     NSInteger index = startIndex + indexPath.row;
     cell.indexLabel.text = @(index).stringValue;
-    cell.valueLabel.text = [self.delegate valueForScrollingTableView:self atIndex:index].stringValue;
+    cell.valueLabel.text = [self.delegate valueForScrollingTableView:self atIndex:index];
     return cell;
 }
 
